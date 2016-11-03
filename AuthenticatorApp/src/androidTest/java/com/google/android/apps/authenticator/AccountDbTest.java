@@ -163,8 +163,8 @@ public class AccountDbTest extends  AndroidTestCase {
 
   public void testIsGoogleAccount() {
     accountDb.update("1@b.c", SECRET, "1@b.c", OtpType.TOTP, null, true);
-    accountDb.update("2@gmail.com", SECRET, "2@gmail.com", OtpType.TOTP, null);
-    accountDb.update("3@google.com", SECRET, "3@google.com", OtpType.TOTP, null);
+    accountDb.update("2@gmail.com", SECRET, "2@gmail.com", OtpType.TOTP, null, false, null, null);
+    accountDb.update("3@google.com", SECRET, "3@google.com", OtpType.TOTP, null, true, "_original_google", "Googlers");
     accountDb.update("4", SECRET, "4", OtpType.HOTP, 3, true);
     accountDb.update("5@yahoo.co.uk", SECRET, "5@yahoo.co.uk", OtpType.TOTP, null);
     accountDb.update("gmail.com", SECRET, "gmail.com", OtpType.TOTP, null);
@@ -182,7 +182,7 @@ public class AccountDbTest extends  AndroidTestCase {
 
   public void testUpdateWithoutSourceValuePreservesSourceValue() {
     accountDb.update("a@b.c", SECRET, "a@b.c", OtpType.TOTP, null, true);
-    accountDb.update("test@gmail.com", SECRET, "test@gmail.com", OtpType.TOTP, null);
+    accountDb.update("test@gmail.com", SECRET, "test@gmail.com", OtpType.TOTP, null, true, "Gmail test", "GMail");
     assertTrue(accountDb.isGoogleAccount("a@b.c"));
     assertTrue(accountDb.isGoogleAccount("test@gmail.com"));
     accountDb.update("b@a.c", SECRET, "a@b.c", OtpType.TOTP, null);

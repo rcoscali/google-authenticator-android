@@ -86,4 +86,6 @@
     <string name="button_exit_howitworks_flow" msgid="6789714209015077393">"Exit"</string>
     <string name="welcome_page_title" msgid="1597640810952332788">"Thousands of online accounts are hijacked every day."</string>
     <string name="welcome_page_details" msgid="3484579068463805365">"2-step verification protects your Google account even if your password is stolen."</string>
+    <string name="enter_issuer_hint">\"Enter your issuer\"</string>
+    <string name="enter_original_name_hint">\"Enter your original name\"</string>
 </resources>

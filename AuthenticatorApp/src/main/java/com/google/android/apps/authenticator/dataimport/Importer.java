@@ -55,6 +55,10 @@ public class Importer {
   // @VisibleForTesting
   static final String KEY_COUNTER = "counter";
 
+  static final String KEY_ORIGINAL_NAME = "original_name";
+
+  static final String KEY_ISSUER = "issuer";
+
   /**
    * Imports the contents of the provided {@link Bundle} into the provided {@link AccountDb} and
    * {@link SharedPreferences}. Does not overwrite existing records in the database.
@@ -124,7 +128,10 @@ public class Importer {
         }
       }
 
-      accountDb.update(name, encodedSecret, name, type, counter);
+      String original_name = accountBundle.getString(KEY_ORIGINAL_NAME);
+      String issuer = accountBundle.getString(KEY_ISSUER);
+
+      accountDb.update(name, encodedSecret, name, type, counter, null, original_name, issuer);
       importedAccountCount++;
     }
 

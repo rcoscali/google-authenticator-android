@@ -77,6 +77,12 @@
   <!-- Example displayed in the secret key field before user starts typing there -->
   <string name="enter_key_hint">Enter your key</string>
 
+  <!-- Example displayed in the original name field before user starts typing there -->
+  <string name="enter_original_name_hint">Enter your original name</string>
+
+  <!-- Example displayed in the issuer field before user starts typing there -->
+  <string name="enter_issuer_hint">Enter your issuer</string>
+
   <!-- Error message displayed if user enters a key that is shorter than allowed minimum -->
   <string name="enter_key_too_short">Key value is too short</string>
 
